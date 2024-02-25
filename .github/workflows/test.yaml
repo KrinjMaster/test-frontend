@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
 
-      - uses: Central-University-IT/setup-frontend@main
+      - uses: Central-University-IT/setup-test-frontend@main
 
       - uses: actions/setup-node@v4.0.1
         with:
