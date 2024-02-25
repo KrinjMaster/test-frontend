@@ -2,10 +2,10 @@
 const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
+  timeout: 5000,
   testDir: "./tests/integration",
   fullyParallel: true,
-  // forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: 1,
   workers: process.env.CI ? 1 : undefined,
   use: {
     baseURL: "http://127.0.0.1:8080",
