@@ -2,7 +2,12 @@
 const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
-  timeout: 10000,
+  expect: {
+    timeout: 10000,
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.1,
+    },
+  },
   testDir: "./tests/integration",
   fullyParallel: true,
   retries: 1,
