@@ -1,4 +1,3 @@
-// @ts-check
 const { test, expect } = require("@playwright/test");
 
 test("Демонстрация работы тестов (score: 0)", async ({ page }) => {
