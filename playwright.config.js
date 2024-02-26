@@ -2,11 +2,11 @@
 const { defineConfig, devices } = require("@playwright/test");
 
 module.exports = defineConfig({
-  timeout: 5000,
+  timeout: 2000,
   testDir: "./tests/integration",
   fullyParallel: true,
   retries: 1,
-  workers: process.env.CI ? 1 : undefined,
+  workers: 5,
   use: {
     baseURL: "http://127.0.0.1:8080",
     trace: "on-first-retry",
@@ -21,6 +21,6 @@ module.exports = defineConfig({
   webServer: {
     command: "npm run http-server",
     url: "http://127.0.0.1:8080",
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
   },
 });
