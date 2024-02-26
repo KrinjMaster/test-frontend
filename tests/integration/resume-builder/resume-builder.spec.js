@@ -1159,7 +1159,7 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
 
   const jobTitle = await page.getByTestId("job-title").nth(0);
   await expect(jobTitle).toBeVisible();
-  await jobTitle.fill('Angular-разработчик');
+  await jobTitle.fill('Angular разработчик');
 
   const generateResumeButton = await page.getByTestId("generate-resume");
   await expect(generateResumeButton).toBeVisible();
@@ -1179,7 +1179,7 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1196,7 +1196,7 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
 
   await backButton.click();
 
-  await jobTitle.fill('Angular-разработчик');
+  await jobTitle.fill('Angular разработчик');
 
   const jobDateStart = await page.getByTestId("job-date-start").nth(0);
   await expect(jobDateStart).toBeVisible();
@@ -1210,8 +1210,8 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1227,8 +1227,8 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1242,7 +1242,7 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
   await expect(resume.getByText("август 2020 г.")).toBeHidden();
 
   await backButton.click();
@@ -1261,15 +1261,15 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
 
   await backButton.click();
 
   const jobDescription = await page.getByTestId("job-description").nth(0);
   await expect(jobDescription).toBeVisible();
-  await jobDescription.fill('Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.');
+  await jobDescription.fill('Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.');
 
   await generateResumeButton.click();
 
@@ -1279,10 +1279,10 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1296,9 +1296,9 @@ test("Генерация одной работы (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeHidden();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeHidden();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeHidden();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeHidden();
-  await expect(resume.getByText("Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.", {exact: true})).toBeHidden();
+  await expect(resume.getByText("Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.", {exact: true})).toBeHidden();
 
   await backButton.click();
 
@@ -1320,7 +1320,7 @@ test("Генерация нескольких работ (скриншот) (sco
 
   const jobTitle = await page.getByTestId("job-title").nth(0);
   await expect(jobTitle).toBeVisible();
-  await jobTitle.fill('Angular-разработчик');
+  await jobTitle.fill('Angular разработчик');
 
   const generateResumeButton = await page.getByTestId("generate-resume");
   await expect(generateResumeButton).toBeVisible();
@@ -1340,7 +1340,7 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1357,7 +1357,7 @@ test("Генерация нескольких работ (скриншот) (sco
 
   await backButton.click();
 
-  await jobTitle.fill('Angular-разработчик');
+  await jobTitle.fill('Angular разработчик');
 
   const jobDateStart = await page.getByTestId("job-date-start").nth(0);
   await expect(jobDateStart).toBeVisible();
@@ -1371,8 +1371,8 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1388,8 +1388,8 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1403,7 +1403,7 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
   await expect(resume.getByText("август 2020 г.")).toBeHidden();
 
   await backButton.click();
@@ -1422,15 +1422,15 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
 
   await backButton.click();
 
   const jobDescription = await page.getByTestId("job-description").nth(0);
   await expect(jobDescription).toBeVisible();
-  await jobDescription.fill('Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.');
+  await jobDescription.fill('Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.');
 
   await generateResumeButton.click();
 
@@ -1440,10 +1440,10 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1453,7 +1453,7 @@ test("Генерация нескольких работ (скриншот) (sco
 
   const jobTitle1 = await page.getByTestId("job-title").nth(1);
   await expect(jobTitle1).toBeVisible();
-  await jobTitle1.fill('С++-разработчик');
+  await jobTitle1.fill('С++ разработчик');
 
   const jobDateStart1 = await page.getByTestId("job-date-start").nth(1);
   await expect(jobDateStart1).toBeVisible();
@@ -1461,11 +1461,11 @@ test("Генерация нескольких работ (скриншот) (sco
 
   const jobPlace1 = await page.getByTestId("job-place").nth(1);
   await expect(jobPlace1).toBeVisible();
-  await jobPlace1.fill('Яндекс, Москва');
+  await jobPlace1.fill('ООО Рога и Копыта, Москва');
 
   const jobDescription1 = await page.getByTestId("job-description").nth(1);
   await expect(jobDescription1).toBeVisible();
-  await jobDescription1.fill('Писал компилятор под js под названием "Энвелоуп", который позволял ускорить билд приложений в 228 раз.');
+  await jobDescription1.fill('Писал компилятор под js, который позволял ускорить билд приложений.');
 
   await generateResumeButton.click();
 
@@ -1475,15 +1475,15 @@ test("Генерация нескольких работ (скриншот) (sco
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("С++-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("сентябрь 2020 г. - наст. время", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Яндекс, Москва", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Писал компилятор под js под названием \"Энвелоуп\", который позволял ускорить билд приложений в 228 раз.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("С++ разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("сентябрь 2020 г. — наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("ООО Рога и Копыта, Москва", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Писал компилятор под js, который позволял ускорить билд приложений.", {exact: true})).toBeVisible();
 
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.", {exact: true})).toBeVisible();
 
   const element = await page.getByTestId('resume-main-section').nth(2);
 
@@ -1551,7 +1551,7 @@ test("Генерация одного обучения (score: 0)", async ({ pag
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1568,7 +1568,7 @@ test("Генерация одного обучения (score: 0)", async ({ pag
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1602,14 +1602,14 @@ test("Генерация одного обучения (score: 0)", async ({ pag
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
 
   await backButton.click();
 
   const educationDescription = await page.getByTestId("education-description").nth(0);
   await expect(educationDescription).toBeVisible();
-  await educationDescription.fill('Направление: Моаис. Еще выиграл турнир по Доте в РТФ.');
+  await educationDescription.fill('Направление: МОАИС.');
 
   await generateResumeButton.click();
 
@@ -1620,9 +1620,9 @@ test("Генерация одного обучения (score: 0)", async ({ pag
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Направление: Моаис. Еще выиграл турнир по Доте в РТФ.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Направление: МОАИС.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1636,9 +1636,9 @@ test("Генерация одного обучения (score: 0)", async ({ pag
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeHidden();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeHidden();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeHidden();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeHidden();
-  await expect(resume.getByText("Направление: Моаис. Еще выиграл турнир по Доте в РТФ.", {exact: true})).toBeHidden();
+  await expect(resume.getByText("Направление: МОАИС.", {exact: true})).toBeHidden();
 
   await backButton.click();
 
@@ -1712,7 +1712,7 @@ test("Генерация нескольких образований (скрин
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1729,7 +1729,7 @@ test("Генерация нескольких образований (скрин
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1763,14 +1763,14 @@ test("Генерация нескольких образований (скрин
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
 
   await backButton.click();
 
   const educationDescription = await page.getByTestId("education-description").nth(0);
   await expect(educationDescription).toBeVisible();
-  await educationDescription.fill('Направление: Моаис. Еще выиграл турнир по Доте в РТФ.');
+  await educationDescription.fill('Направление: МОАИС.');
 
   await generateResumeButton.click();
 
@@ -1781,9 +1781,9 @@ test("Генерация нескольких образований (скрин
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Направление: Моаис. Еще выиграл турнир по Доте в РТФ.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Направление: МОАИС.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1801,11 +1801,11 @@ test("Генерация нескольких образований (скрин
 
   const educationPlace1 = await page.getByTestId("education-place").nth(1);
   await expect(educationPlace1).toBeVisible();
-  await educationPlace1.fill('МФТИ, Москва');
+  await educationPlace1.fill('ЦУ, Москва');
 
   const educationDescription1 = await page.getByTestId("education-description").nth(1);
   await expect(educationDescription1).toBeVisible();
-  await educationDescription1.fill('Физ-тех школа, Жуковский, Райгородский здесь, Саватеев вел теорию игр');
+  await educationDescription1.fill('Дизайн и разработка ПО');
 
   await generateResumeButton.click();
 
@@ -1816,14 +1816,14 @@ test("Генерация нескольких образований (скрин
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Магистратура", {exact: true})).toBeVisible();
-  await expect(resume.getByText("сентябрь 2020 г. - наст. время", {exact: true})).toBeVisible();
-  await expect(resume.getByText("МФТИ, Москва", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Физ-тех школа, Жуковский, Райгородский здесь, Саватеев вел теорию игр", {exact: true})).toBeVisible();
+  await expect(resume.getByText("сентябрь 2020 г. — наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("ЦУ, Москва", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Дизайн и разработка ПО", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Направление: Моаис. Еще выиграл турнир по Доте в РТФ.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Направление: МОАИС.", {exact: true})).toBeVisible();
 
   const element = await page.getByTestId('resume-main-section').nth(2);
 
@@ -1891,7 +1891,7 @@ test("Генерация одного курса (score: 0)", async ({ page }) =
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1908,7 +1908,7 @@ test("Генерация одного курса (score: 0)", async ({ page }) =
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1931,7 +1931,7 @@ test("Генерация одного курса (score: 0)", async ({ page }) =
 
   const coursePlace = await page.getByTestId("course-place").nth(0);
   await expect(coursePlace).toBeVisible();
-  await coursePlace.fill('Яндекс, МФТИ');
+  await coursePlace.fill('ЦУ');
 
   await generateResumeButton.click();
 
@@ -1942,8 +1942,8 @@ test("Генерация одного курса (score: 0)", async ({ page }) =
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Яндекс, МФТИ", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("ЦУ", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -1957,8 +1957,8 @@ test("Генерация одного курса (score: 0)", async ({ page }) =
   await expect(resume.getByText("Личные данные", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeHidden();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeHidden();
-  await expect(resume.getByText("Яндекс, МФТИ", {exact: true})).toBeHidden();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeHidden();
+  await expect(resume.getByText("ЦУ", {exact: true})).toBeHidden();
 
   await backButton.click();
 
@@ -2032,7 +2032,7 @@ test("Генерация нескольких курсов (скриншот) (s
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - наст. время", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — наст. время", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -2049,7 +2049,7 @@ test("Генерация нескольких курсов (скриншот) (s
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -2072,7 +2072,7 @@ test("Генерация нескольких курсов (скриншот) (s
 
   const coursePlace = await page.getByTestId("course-place").nth(0);
   await expect(coursePlace).toBeVisible();
-  await coursePlace.fill('Яндекс, МФТИ');
+  await coursePlace.fill('ЦУ');
 
   await generateResumeButton.click();
 
@@ -2083,8 +2083,8 @@ test("Генерация нескольких курсов (скриншот) (s
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Яндекс, МФТИ", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("ЦУ", {exact: true})).toBeVisible();
 
   await backButton.click();
 
@@ -2106,7 +2106,7 @@ test("Генерация нескольких курсов (скриншот) (s
 
   const coursePlace1 = await page.getByTestId("course-place").nth(1);
   await expect(coursePlace1).toBeVisible();
-  await coursePlace1.fill('Сбер');
+  await coursePlace1.fill('Образование для Всех');
 
   await addcourse.click();
 
@@ -2124,7 +2124,7 @@ test("Генерация нескольких курсов (скриншот) (s
 
   const coursePlace2 = await page.getByTestId("course-place").nth(2);
   await expect(coursePlace2).toBeVisible();
-  await coursePlace2.fill('Контур');
+  await coursePlace2.fill('Известная компания');
 
   await generateResumeButton.click();
 
@@ -2135,16 +2135,16 @@ test("Генерация нескольких курсов (скриншот) (s
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Разработка на C++", {exact: true})).toBeVisible();
-  await expect(resume.getByText("январь 2019 г. - январь 2020 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Сбер", {exact: true})).toBeVisible();
+  await expect(resume.getByText("январь 2019 г. — январь 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Образование для Всех", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Яндекс, МФТИ", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("ЦУ", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Школа промышленной разработки", {exact: true})).toBeVisible();
-  await expect(resume.getByText("январь 2021 г. - май 2021 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Контур", {exact: true})).toBeVisible();
+  await expect(resume.getByText("январь 2021 г. — май 2021 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Известная компания", {exact: true})).toBeVisible();
 
   const element = await page.getByTestId('resume-main-section').nth(2);
 
@@ -2225,7 +2225,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const jobTitle = await page.getByTestId("job-title").nth(0);
   await expect(jobTitle).toBeVisible();
-  await jobTitle.fill('Angular-разработчик');
+  await jobTitle.fill('Angular разработчик');
 
   const jobDateStart = await page.getByTestId("job-date-start").nth(0);
   await expect(jobDateStart).toBeVisible();
@@ -2241,7 +2241,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const jobDescription = await page.getByTestId("job-description").nth(0);
   await expect(jobDescription).toBeVisible();
-  await jobDescription.fill('Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.');
+  await jobDescription.fill('Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.');
 
   const addJob = await page.getByTestId("add-job");
   await expect(addJob).toBeVisible();
@@ -2249,7 +2249,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const jobTitle1 = await page.getByTestId("job-title").nth(1);
   await expect(jobTitle1).toBeVisible();
-  await jobTitle1.fill('С++-разработчик');
+  await jobTitle1.fill('С++ разработчик');
 
   const jobDateStart1 = await page.getByTestId("job-date-start").nth(1);
   await expect(jobDateStart1).toBeVisible();
@@ -2257,11 +2257,11 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const jobPlace1 = await page.getByTestId("job-place").nth(1);
   await expect(jobPlace1).toBeVisible();
-  await jobPlace1.fill('Яндекс, Москва');
+  await jobPlace1.fill('ООО Рога и Копыта, Москва');
 
   const jobDescription1 = await page.getByTestId("job-description").nth(1);
   await expect(jobDescription1).toBeVisible();
-  await jobDescription1.fill('Писал компилятор под js под названием "Энвелоуп", который позволял ускорить билд приложений в 228 раз.');
+  await jobDescription1.fill('Писал компилятор под js, который позволял ускорить билд приложений.');
 
   const educationTitle = await page.getByTestId("education-title").nth(0);
   await expect(educationTitle).toBeVisible();
@@ -2281,7 +2281,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const educationDescription = await page.getByTestId("education-description").nth(0);
   await expect(educationDescription).toBeVisible();
-  await educationDescription.fill('Направление: Моаис. Еще выиграл турнир по Доте в РТФ.');
+  await educationDescription.fill('Направление: МОАИС.');
 
   const addeducation = await page.getByTestId("add-education");
   await expect(addeducation).toBeVisible();
@@ -2297,11 +2297,11 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const educationPlace1 = await page.getByTestId("education-place").nth(1);
   await expect(educationPlace1).toBeVisible();
-  await educationPlace1.fill('МФТИ, Москва');
+  await educationPlace1.fill('ЦУ, Москва');
 
   const educationDescription1 = await page.getByTestId("education-description").nth(1);
   await expect(educationDescription1).toBeVisible();
-  await educationDescription1.fill('Физ-тех школа, Жуковский, Райгородский здесь, Саватеев вел теорию игр');
+  await educationDescription1.fill('Дизайн и разработка ПО');
 
   const courseTitle = await page.getByTestId("course-title").nth(0);
   await expect(courseTitle).toBeVisible();
@@ -2317,7 +2317,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const coursePlace = await page.getByTestId("course-place").nth(0);
   await expect(coursePlace).toBeVisible();
-  await coursePlace.fill('Яндекс, МФТИ');
+  await coursePlace.fill('ЦУ');
 
   const addcourse = await page.getByTestId("add-course");
   await expect(addcourse).toBeVisible();
@@ -2337,7 +2337,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const coursePlace1 = await page.getByTestId("course-place").nth(1);
   await expect(coursePlace1).toBeVisible();
-  await coursePlace1.fill('Сбер');
+  await coursePlace1.fill('Образование для Всех');
 
   await addcourse.click();
 
@@ -2355,7 +2355,7 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
 
   const coursePlace2 = await page.getByTestId("course-place").nth(2);
   await expect(coursePlace2).toBeVisible();
-  await coursePlace2.fill('Контур');
+  await coursePlace2.fill('Известная компания');
 
   const generateResumeButton = await page.getByTestId("generate-resume");
   await expect(generateResumeButton).toBeVisible();
@@ -2401,39 +2401,39 @@ test("Генерация всего резюме (score: 0)", async ({ page }) =
   await expect(resume.getByText("В целом достаточно сильный разработчик, я бы даже сказал умный, вообще умен не по годам. Подниму ваш проект, удалю все легаси, и все коммиты будут маленькими по 15 строк кода.", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Опыт работы", {exact: true})).toBeVisible();
-  await expect(resume.getByText("С++-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("сентябрь 2020 г. - наст. время", {exact: true}).nth(0)).toBeVisible();
-  await expect(resume.getByText("Яндекс, Москва", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Писал компилятор под js под названием \"Энвелоуп\", который позволял ускорить билд приложений в 228 раз.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("С++ разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("сентябрь 2020 г. — наст. время", {exact: true}).nth(0)).toBeVisible();
+  await expect(resume.getByText("ООО Рога и Копыта, Москва", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Писал компилятор под js, который позволял ускорить билд приложений.", {exact: true})).toBeVisible();
 
-  await expect(resume.getByText("Angular-разработчик", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true}).nth(0)).toBeVisible();
+  await expect(resume.getByText("Angular разработчик", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true}).nth(0)).toBeVisible();
   await expect(resume.getByText("Тинькофф Центр Разработки, Ижевск", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Придумывал аналитические решения и создавала веб-сайта портала пивнухи, где продавали крафтовое пиво.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Придумывал аналитические решения и разрабатывал веб-сайты для улучшения опыта пользователей.", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Образование и квалификация", {exact: true})).toBeVisible();
   await expect(resume.getByText("Магистратура", {exact: true})).toBeVisible();
-  await expect(resume.getByText("сентябрь 2020 г. - наст. время", {exact: true}).nth(1)).toBeVisible();
-  await expect(resume.getByText("МФТИ, Москва", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Физ-тех школа, Жуковский, Райгородский здесь, Саватеев вел теорию игр", {exact: true})).toBeVisible();
+  await expect(resume.getByText("сентябрь 2020 г. — наст. время", {exact: true}).nth(1)).toBeVisible();
+  await expect(resume.getByText("ЦУ, Москва", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Дизайн и разработка ПО", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Бакалавриат", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true}).nth(1)).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true}).nth(1)).toBeVisible();
   await expect(resume.getByText("Уральский федеральный университет, Екатеринбург", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Направление: Моаис. Еще выиграл турнир по Доте в РТФ.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Направление: МОАИС.", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Курсы", {exact: true})).toBeVisible();
   await expect(resume.getByText("Разработка на C++", {exact: true})).toBeVisible();
-  await expect(resume.getByText("январь 2019 г. - январь 2020 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Сбер", {exact: true})).toBeVisible();
+  await expect(resume.getByText("январь 2019 г. — январь 2020 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Образование для Всех", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Основы JavaScript, HTML, CSS", {exact: true})).toBeVisible();
-  await expect(resume.getByText("февраль 2020 г. - август 2020 г.", {exact: true}).nth(2)).toBeVisible();
-  await expect(resume.getByText("Яндекс, МФТИ", {exact: true})).toBeVisible();
+  await expect(resume.getByText("февраль 2020 г. — август 2020 г.", {exact: true}).nth(2)).toBeVisible();
+  await expect(resume.getByText("ЦУ", {exact: true})).toBeVisible();
 
   await expect(resume.getByText("Школа промышленной разработки", {exact: true})).toBeVisible();
-  await expect(resume.getByText("январь 2021 г. - май 2021 г.", {exact: true})).toBeVisible();
-  await expect(resume.getByText("Контур", {exact: true})).toBeVisible();
+  await expect(resume.getByText("январь 2021 г. — май 2021 г.", {exact: true})).toBeVisible();
+  await expect(resume.getByText("Известная компания", {exact: true})).toBeVisible();
 
   await expect(resume).toHaveScreenshot(`resume-main-content-full.png`);
 });
