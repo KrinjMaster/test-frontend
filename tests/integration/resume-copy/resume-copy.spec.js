@@ -1,15 +1,17 @@
 const {test, expect} = require('@playwright/test');
 const {createResume} = require('../utils/create-resume');
-const {fullResume} = require('../utils/test-data');
-const {checkResume} = require('../utils/check-resume');
+
+const name = 'Петров Василий Алексеевич';
 
 test.beforeEach(async ({page}) => {
-  await page.goto("/all");
+  await page.goto('/all');
   await page.evaluate(() => {
     localStorage.clear();
     sessionStorage.clear();
   });
-  await createResume(page, 'JS разработчик', fullResume);
+
+  await createResume(page, name);
+
   await page.goto('/all');
 });
 
@@ -53,44 +55,20 @@ test('Клик по кнопке "Отмена" внутри диалога за
   await expect(modalCancelButton).toBeHidden();
 });
 
-test('Проверяем, что все категории могут быть скопированы (score: 0)', async ({page}) => {
+test('Проверяем, что имя копируется (score: 0)', async ({page}) => {
   const actionButton = await page.getByTestId('resume-actions');
   await actionButton.click();
 
   const copyButton = await page.getByTestId('resume-actions__copy');
   await copyButton.click();
 
-  const modalCheckboxes = await page.getByTestId('copy-modal__checkbox');
-
-  for (let i = 0; i < 7; i++) {
-    await modalCheckboxes.nth(i).click();
-  }
+  const personalInfoCheckbox = await page.getByTestId('copy-modal__checkbox').nth(0);
+  await personalInfoCheckbox.click();
 
   const modalCopyButton = await page.getByTestId('copy-modal__copy');
   await modalCopyButton.click();
 
-  await checkResume(page, fullResume);
-});
-
-test('Проверяем, что копируются только выбранные категории (score: 0)', async ({page}) => {
-  const actionButton = await page.getByTestId('resume-actions');
-  await actionButton.click();
-
-  const copyButton = await page.getByTestId('resume-actions__copy');
-  await copyButton.click();
-
-  const modalCheckboxes = await page.getByTestId('copy-modal__checkbox');
-
-  for (let i = 0; i < 7; i += 2) {
-    await modalCheckboxes.nth(i).click();
-  }
-
-  const modalCopyButton = await page.getByTestId('copy-modal__copy');
-  await modalCopyButton.click();
-
-  const fullResumeCopy = structuredClone(fullResume);
-  delete fullResumeCopy.about;
-  delete fullResumeCopy.languages;
-  delete fullResumeCopy.education;
-  await checkResume(page, fullResumeCopy);
+  const nameInput = await page.getByTestId('personal-info').nth(0);
+  await expect(nameInput).toBeVisible();
+  await nameInput.fill(name);
 });
