@@ -291,4 +291,4 @@
 
 ### Схема навигации
 
-<img src="https://github.com/Central-University-IT/frontend-images/blob/main/navigation" width="600" alt="Схема навигации">
+<img src="https://github.com/Central-University-IT/frontend-images/blob/main/navigation.png" width="600" alt="Схема навигации">
