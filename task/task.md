@@ -289,3 +289,6 @@
 
 Вася очень надеется на вас, и желает вам успехов!
 
+### Схема навигации
+
+<img src="https://github.com/Central-University-IT/frontend-images/blob/main/navigation" width="600" alt="Схема навигации">
