@@ -4,8 +4,100 @@
     <meta charset="UTF-8" />
     <title>Конструктор резюме</title>
     <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./scripts/index.js"></script>
   </head>
   <body>
-    <h1 test-id="resume-form-title">Конструктор резюме</h1>
+    <h1 test-id="resume-form-title" class="text-3xl font-bold pl-2.5">
+      Конструктор резюме
+    </h1>
+    <form
+      class="w-full h-full p-3.5 inline-grid grid-cols-2 mx-auto"
+      test-id="resume-builder"
+    >
+      <div>
+        <h1 class="font-bold text-xl">Персональные данные</h1>
+        <label for="fio" class="block font-bold text-sm text-gray-500"
+          >ФИО</label
+        >
+        <input
+          type="text"
+          id="fio"
+          test-id="personal-info"
+          class="border-2 rounded-lg bg-gray-100 w-80 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+          required
+        />
+        <label for="birth_date" class="block font-bold text-sm text-gray-500"
+          >Дата рождения</label
+        >
+        <input
+          type="date"
+          id="birth_date"
+          test-id="personal-info"
+          class="border-2 rounded-lg bg-gray-100 w-80 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+        />
+        <label for="birth_city" class="block font-bold text-sm text-gray-500"
+          >Город</label
+        >
+        <input
+          type="text"
+          id="birth_city"
+          test-id="personal-info"
+          class="border-2 rounded-lg bg-gray-100 w-80 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+        />
+        <label for="telephone" class="block font-bold text-sm text-gray-500"
+          >Номер телефона</label
+        >
+        <input
+          type="text"
+          id="telephone"
+          test-id="personal-info"
+          class="border-2 rounded-lg bg-gray-100 w-80 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+        />
+        <label for="email" class="block font-bold text-sm text-gray-500"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          test-id="personal-info"
+          class="border-2 rounded-lg bg-gray-100 w-80 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+        />
+      </div>
+      <div>
+        <h1 class="font-bold text-xl">Интересы</h1>
+        <div class="flex gap-1.5 items-top">
+          <div>
+            <label for="interest" class="block font-bold text-sm text-gray-500"
+              >Интерес</label
+            >
+            <div class="flex flex-col gap-1.5" id="interest-container">
+              <input
+                type="text"
+                id="interest"
+                test-id="interest"
+                class="border-2 rounded-lg bg-gray-100 w-64 focus:ring-blue-300 focus:border-blue-300 py-0.5 px-1.5"
+              />
+            </div>
+          </div>
+          <button
+            test-id="add-interest"
+            id="add-interest"
+            class="mt-5 w-16 text-center bg-green-200 h-8 rounded-lg font-bold border-2 text-green-700 border-green-400 hover:brightness-95"
+          >
+            +
+          </button>
+          <button
+            test-id="remove-interest"
+            id="remove-interest"
+            class="w-8 mt-5 text-center bg-red-200 h-8 rounded-lg font-bold border-2 text-red-700 border-red-400 hover:brightness-95"
+          >
+            -
+          </button>
+        </div>
+        <div id="iterests-list"></div>
+      </div>
+    </form>
+    <a href="/all">Перейти на список резюме</a>
   </body>
 </html>
